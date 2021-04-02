@@ -1,5 +1,5 @@
 module "vpc" {
-  source = "../"
+  source = "../../"
 
   #------------------------------------------
   # Do not change the teamid, prjid once set.
