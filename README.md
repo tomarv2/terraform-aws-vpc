@@ -69,7 +69,7 @@ tf -cloud aws destroy -var='teamid=foo' -var='prjid=bar'
 #### VPC with default settings
 ```
 module "vpc" {
-  source = "git::git@github.com:tomarv2/terraform-aws-vpc.git?ref=v0.0.1"
+  source = "git::git@github.com:tomarv2/terraform-aws-vpc.git"
   
   #------------------------------------------
   # Do not change the teamid, prjid once set.
