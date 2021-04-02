@@ -66,5 +66,18 @@ tf -cloud aws apply -var='teamid=foo' -var='prjid=bar'
 ```
 tf -cloud aws destroy -var='teamid=foo' -var='prjid=bar'
 ```
+#### VPC with default settings
+```
+module "vpc" {
+  source = "git::git@github.com:tomarv2/terraform-aws-vpc.git?ref=v0.0.1"
+  
+  #------------------------------------------
+  # Do not change the teamid, prjid once set.
+  teamid = var.teamid
+  prjid = var.prjid
+}
+```
 
 Please refer to examples directory [link](examples) for references.
+
+#### Note: Working on a new version of VPC module to cover cases like `shared vpc`.
