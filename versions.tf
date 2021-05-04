@@ -4,6 +4,9 @@ terraform {
     aws = {
       version = "~> 3.30"
     }
+    random = {
+      version = "~> 3.1"
+    }
   }
 }
 

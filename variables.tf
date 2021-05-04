@@ -15,13 +15,15 @@ variable "profile_to_use" {
 }
 
 variable "aws_region" {
-  default = "us-west-2"
-  type    = string
+  description = "aws region to deploy resources"
+  default     = "us-west-2"
+  type        = string
 }
 
 variable "cidr_block" {
-  default = "10.4.0.0/16"
-  type    = string
+  description = "The CIDR block for the VPC"
+  default     = "10.4.0.0/16"
+  type        = string
 }
 
 resource "random_string" "naming" {
