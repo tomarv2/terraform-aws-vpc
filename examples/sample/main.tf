@@ -4,5 +4,5 @@ module "vpc" {
   #------------------------------------------
   # Do not change the teamid, prjid once set.
   teamid = var.teamid
-  prjid = var.prjid
+  prjid  = var.prjid
 }
