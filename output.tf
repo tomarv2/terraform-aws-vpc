@@ -3,19 +3,34 @@ output "vpc_id" {
   value       = module.vpc.vpc_id
 }
 
-output "internet_gateway_route_id" {
-  description = "ID of the internet gateway route"
-  value       = module.vpc.database_internet_gateway_route_id
+output "private_route_table_ids" {
+  description = "list of private VPC route tables IDs"
+  value       = module.vpc.private_route_table_ids
 }
 
 output "public_route_table_ids" {
-  description = "List of IDs of public route tables"
+  description = "list of public VPC route tables IDs"
   value       = module.vpc.public_route_table_ids
 }
 
-output "private_route_table_ids" {
-  description = "List of IDs of private route tables"
-  value       = module.vpc.private_route_table_ids
+output "security_group_ids" {
+  description = "list of VPC security group IDs"
+  value       = module.vpc.default_security_group_id
+}
+
+output "private_subnet_ids" {
+  description = "list of private subnet ids within VPC"
+  value       = module.vpc.private_subnets
+}
+
+output "public_subnet_ids" {
+  description = "list of public subnet ids within VPC"
+  value       = module.vpc.public_subnets
+}
+
+output "internet_gateway_route_id" {
+  description = "ID of the internet gateway route"
+  value       = module.vpc.database_internet_gateway_route_id
 }
 
 output "subnets" {
@@ -30,40 +45,11 @@ output "subnet_arns" {
 
 output "default_security_group_id" {
   description = "The ID of the security group created by VPC"
-  value       = module.vpc.default_security_group_id
+
+  value = module.vpc.default_security_group_id
 }
 
 output "private_subnets" {
   description = "List of IDs of private subnets"
   value       = module.vpc.private_subnets
-}
-
-output "public_subnets" {
-  description = "List of IDs of public subnets"
-  value       = module.vpc.public_subnets
-}
-
-output "public_subnet_arns" {
-  description = "List of ARNs of public subnets"
-  value       = module.vpc.public_subnet_arns
-}
-
-output "public_subnets_cidr_blocks" {
-  description = "List of cidr_blocks of public subnets"
-  value       = module.vpc.public_subnets_cidr_blocks
-}
-
-output "private_subnet_arns" {
-  description = "List of ARNs of private subnets"
-  value       = module.vpc.private_subnet_arns
-}
-
-output "private_subnets_cidr_blocks" {
-  description = "List of cidr_blocks of private subnets"
-  value       = module.vpc.private_subnets_cidr_blocks
-}
-
-output "security_group" {
-  description = "List of cidr_blocks of private subnets"
-  value       = module.vpc.default_security_group_id
 }

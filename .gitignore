@@ -81,4 +81,3 @@ _testmain.go
 
 # ignore test file(s)
 **test**
-remote_backend.tf
