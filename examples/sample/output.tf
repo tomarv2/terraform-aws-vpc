@@ -8,23 +8,17 @@ output "internet_gateway_route_id" {
   value       = module.vpc.internet_gateway_route_id
 }
 
-output "subnets" {
-  description = "List of subnets IDs"
-  value       = module.vpc.subnets
-}
-
 output "subnet_arns" {
   description = "List of subnets ARNs"
   value       = module.vpc.subnet_arns
 }
 
-output "default_security_group_id" {
-
+output "security_group_id" {
   description = "The ID of the security group created by VPC"
-  value       = module.vpc.default_security_group_id
+  value       = module.vpc.security_group_id
 }
 
 output "private_subnets" {
   description = "List of IDs of private subnets"
-  value       = module.vpc.private_subnets
+  value       = module.vpc.private_subnet_ids
 }
