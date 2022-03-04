@@ -20,10 +20,6 @@ resource "random_string" "naming" {
   length  = 3
 }
 
-locals {
-  prefix = random_string.naming.result
-}
-
 variable "enable_dns_hostnames" {
   description = "Should be true to enable DNS hostnames in the Default VPC"
   type        = bool
@@ -52,18 +48,6 @@ variable "create_igw" {
   description = "Controls if an Internet Gateway is created for public subnets and the related routes that connect them."
   type        = bool
   default     = true
-}
-
-variable "default_security_group_egress" {
-  description = "List of maps of egress rules to set on the default security group"
-  type        = list(map(string))
-  default     = null
-}
-
-variable "default_security_group_ingress" {
-  description = "List of maps of ingress rules to set on the default security group"
-  type        = list(map(string))
-  default     = null
 }
 
 variable "private_subnets" {
