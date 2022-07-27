@@ -2,7 +2,7 @@ terraform {
   required_version = ">= 1.0.1"
   required_providers {
     aws = {
-      version = "~> 3.74"
+      version = "~> 4.23"
     }
   }
 }
@@ -29,6 +29,18 @@ module "vpc" {
   }]
   public_subnets  = [cidrsubnet(var.cidr_block, 3, 0)]
   private_subnets = [cidrsubnet(var.cidr_block, 3, 1)]
+
+  custom_tags = {
+    "hello": "world"
+  }
+  enable_flow_log                       = true
+  create_flow_log_cloudwatch_log_group  = true
+  flow_log_file_format                  = "parquet"
+  vpc_flow_log_tags = {
+    "hello_vpc": "world"
+  }
+  flow_log_cloudwatch_iam_role_arn  = "<role_arn>"
+
   #------------------------------------------
   # Do not change the teamid, prjid once set.
   teamid = var.teamid
