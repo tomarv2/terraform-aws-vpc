@@ -33,9 +33,9 @@ module "vpc" {
   custom_tags = {
     "hello": "world"
   }
-  enable_flow_log = true
-  create_flow_log_cloudwatch_log_group = true
-  flow_log_file_format  = "parquet"
+  enable_flow_log                       = true
+  create_flow_log_cloudwatch_log_group  = true
+  flow_log_file_format                  = "parquet"
   vpc_flow_log_tags = {
     "hello_vpc": "world"
   }
