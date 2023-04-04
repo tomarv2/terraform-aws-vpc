@@ -17,16 +17,16 @@ module "vpc" {
   public_subnets  = var.public_subnets
   private_subnets = var.private_subnets
 
-  default_security_group_egress = []
+  default_security_group_egress  = []
   default_security_group_ingress = []
 
-  enable_flow_log                       = var.enable_flow_log
-  create_flow_log_cloudwatch_log_group  = var.create_flow_log_cloudwatch_log_group
-  flow_log_file_format                  = var.flow_log_file_format
-  flow_log_cloudwatch_iam_role_arn      = var.flow_log_cloudwatch_iam_role_arn
-  vpc_flow_log_tags                     = var.vpc_flow_log_tags
+  enable_flow_log                      = var.enable_flow_log
+  create_flow_log_cloudwatch_log_group = var.create_flow_log_cloudwatch_log_group
+  flow_log_file_format                 = var.flow_log_file_format
+  flow_log_cloudwatch_iam_role_arn     = var.flow_log_cloudwatch_iam_role_arn
+  vpc_flow_log_tags                    = var.vpc_flow_log_tags
 
-  tags                = merge(var.custom_tags, local.shared_tags)
-  public_subnet_tags  = merge(var.public_subnet_tags, local.shared_tags, var.custom_tags)
-  private_subnet_tags = merge(var.private_subnet_tags, local.shared_tags, var.custom_tags)
+  tags                = merge(var.extra_tags, local.shared_tags)
+  public_subnet_tags  = merge(var.public_subnet_tags, local.shared_tags, var.extra_tags)
+  private_subnet_tags = merge(var.private_subnet_tags, local.shared_tags, var.extra_tags)
 }
