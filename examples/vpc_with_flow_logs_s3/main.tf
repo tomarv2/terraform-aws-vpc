@@ -30,11 +30,11 @@ module "vpc" {
   public_subnets  = [cidrsubnet(var.cidr_block, 3, 0)]
   private_subnets = [cidrsubnet(var.cidr_block, 3, 1)]
 
-  custom_tags = {
-    "hello": "world"
+  extra_tags = {
+    "hello" : "world"
   }
-  enable_flow_log                       = true
-  flow_log_file_format                  = "parquet"
+  enable_flow_log      = true
+  flow_log_file_format = "parquet"
   vpc_flow_log_tags = {
     "hello_vpc" : "world"
   }

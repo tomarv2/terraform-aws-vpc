@@ -30,8 +30,8 @@ module "vpc" {
   public_subnets  = [cidrsubnet(var.cidr_block, 3, 0)]
   private_subnets = [cidrsubnet(var.cidr_block, 3, 1)]
 
-  custom_tags = {
-    "hello": "world"
+  extra_tags = {
+    "hello" : "world"
   }
   #------------------------------------------
   # Do not change the teamid, prjid once set.
